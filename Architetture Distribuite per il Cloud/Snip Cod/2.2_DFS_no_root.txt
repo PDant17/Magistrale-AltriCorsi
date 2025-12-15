@@ -1,0 +1,45 @@
+// Mi sono svegliato spontaneamente non alla ricezione
+// di un messaggio
+if (non ricevi messaggi):
+    if (parent==nil):
+        // Mi propongo come radice di un frammento
+        leader=id;
+        // Parenti punta a me stesso perchè sono la radice
+        parent=i
+        // Per ogni vicino (credo)
+        Sia p(j) un processore in unexplored
+            rimuovi p(j) da unexplored
+            inva <leader> a p(j)
+
+if (ricevi <new_id> da p(j)):
+    if (leader <new_id>):
+        leader=new_id;
+        parent=j
+        // Butto tutto quello che ho fatto
+        unexplored="tutti i vicini tranne p(j)"
+        if (unexplored!=vuoto):
+        // Continuo o inizio la visita DFS
+        Sia p(j) un processore in unexplored
+            rimuovi p(j) da unexplored
+            inva <leader> a p(j)   
+        elif 
+            invia <parent> a parent
+elif if (leader = new_id):
+    invia <already> a p(j)
+
+if (ricevi <parent> o <already> da p(j)):
+    if (ricevi <parent>):
+        aggiungi j a children
+    if (unexplored vuoto):
+        if (parent!=i):
+            invia <parent> a parent
+        else
+            termina con radice
+    else
+        // Continua visita DFS
+        Sia p(j) un processore in unexplored
+        rimuovi p(j) da unexplored
+        inva <leader> a p(j)
+
+
+

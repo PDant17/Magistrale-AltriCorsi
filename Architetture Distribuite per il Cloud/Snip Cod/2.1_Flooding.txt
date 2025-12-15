@@ -1,0 +1,32 @@
+// Inizialmente parent==null, children e other sono vuoti
+
+// Nodo padre
+Se (non ricevi messaggi):
+    Se (i==r && parent==nil):
+        Invia M a tutti i vicini
+        parent=i
+
+// Tutti gli altri
+Se (ricevi M dal vicino):
+    Se (parent==nil):
+        // Setto che ho trovato un padre
+        parent=j
+        // Dico al mio padre che sono suo figlio
+        Invia <parent> a p(j)
+        Invia M a tutti i vicini eccetto p(j)
+else 
+    // Ho già un padre
+    invia <reject> a p(j)
+
+Se (ricevi <parent> dal vicino p(j)):
+    Aggiungi j a children
+    Se (children U other contiene tutti i vicini tranne parent):
+        // Vuol dire che ho finito
+        termina
+Se (ricevi <reject> dal vicino):
+    Aggiungi j ad other
+    Se (children U other contiene tutti i vicini tranne parent):  
+        // Vuol dire che ho finito
+        termina
+
+

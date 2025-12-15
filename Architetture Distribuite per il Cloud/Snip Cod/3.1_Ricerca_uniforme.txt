@@ -1,0 +1,25 @@
+// Sia R l’insieme di messaggi ricevuti in questo evento
+S := insieme vuoto // messaggi da spedire 
+if (status = asleep):
+ 	if  (R è vuoto): 
+ 		status = participating
+ 		min := id
+ 		aggiungi <id,1> ad S //messaggi di prima fase
+ 	else
+ 		status = relay
+ 	    min := infinito 
+for (ciascun <m,h> in R):
+ 	if (m < min): 
+ 		diventa non eletto 
+ 		min := m
+ 		if ((status = relay) & (h = 1)): 
+ 			aggiungi (m,h) to S 
+ 		else 
+ 			aggiungi (m,2) a waiting salvando il roudn corrente
+ 	else if (m = id): 
+        diventa eletto
+for (ciascun <m,2> in waiting):
+ 	if (<m,2> è stato ricevuto 2^m - 1 round prima): 
+ 		rimuovi <m,2> da waiting e aggiungilo a S 
+Invia S
+

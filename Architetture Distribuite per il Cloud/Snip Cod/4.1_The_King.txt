@@ -1,0 +1,19 @@
+// Inizialmente pref = x
+
+// I round della fase k
+Invia pref a tutti
+ricevi pref da tutti
+maj=“valore che occorre più di n/2 volte” (π se non esiste)
+mult=“molteplicità di maj”
+
+// II round della fase k
+if (i=k allora invia maj):  //pi è il king della fase
+    ricevi king da pk (π se non si riceve nulla)
+if (mult > n/2 +f):
+	pref = maj
+else
+    altrimenti pref = king
+if (k=f+1)
+    decidi pref
+
+

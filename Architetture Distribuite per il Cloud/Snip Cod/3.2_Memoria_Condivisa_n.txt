@@ -1,0 +1,18 @@
+Node(v:integer, side: 0..1){
+    Wantv [side] := 0
+    wait until (Wantv [1-side] = 0 or Priorityv = side)
+    Wantv [side] := 1
+    if(Priorityv = 1-side):
+        if(Wantv [1-side] = 1):
+            goto 1
+    else 
+        wait until (Wantv [1-side] = 0)
+    if(v=1):
+        <Critical>
+    else 
+        Node(v/2, v mod 2)
+        Priorityv := 1-side
+        Wantv [side] := 0
+}
+
+
