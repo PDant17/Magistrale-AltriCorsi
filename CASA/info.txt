@@ -1,0 +1,2 @@
+Context Aware Security Analytics (CASA) in Computer Vision
+Corso del secondo semestre tenuto da Nappi, Narducci e Bisogni
